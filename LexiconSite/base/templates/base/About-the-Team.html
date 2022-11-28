@@ -6,13 +6,13 @@
     <meta name="keywords" content="Our Tea​m">
     <meta name="description" content="">
     <title>About the Team</title>
-    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
-<link rel="stylesheet" href="{% static 'About-the-Team.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" "="" defer=""></script>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'base/About-the-Team.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.17.10, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i' %}">
-    <link id="u-page-google-font" rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700' %}">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700">
     
     
     
@@ -23,15 +23,15 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "images/finallogo.png"
+		"logo": "imagesfinallogo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="About the Team">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-ab95"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="{% static 'Home.html' %}" data-page-id="38108010" class="u-image u-logo u-image-1" data-image-width="688" data-image-height="664" title="Home">
-          <img src="{% static 'images/finallogo.png' %}" class="u-logo-image u-logo-image-1">
+        <a href="{% url 'home' %}" data-page-id="38108010" class="u-image u-logo u-image-1" data-image-width="688" data-image-height="664" title="Home">
+          <img src="{% static 'base/images/finallogo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
@@ -42,28 +42,28 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% static 'Home.html' %}" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% static 'About.html' %}" style="padding: 10px 20px;">About</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% static 'About-the-Project.html' %}">About the Project</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% static 'Technical-Information.html' %}">Technical Information</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% static 'About-the-Team.html' %}">About the Team</a>
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'home' %}" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'about' %}" style="padding: 10px 20px;">About</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'about_project' %}">About the Project</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'technical_info' %}">Technical Information</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'about_team' %}">About the Team</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% static 'News.html' %}" style="padding: 10px 20px;">News</a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% static 'Contact.html' %}" style="padding: 10px 20px;">Contact</a>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'news' %}" style="padding: 10px 20px;">News</a>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-border-active-grey-90 u-border-hover-grey-50 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'contact' %}" style="padding: 10px 20px;">Contact</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'Home.html' %}">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'About.html' %}">About</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'About-the-Project.html' %}">About the Project</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'Technical-Information.html' %}">Technical Information</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'About-the-Team.html' %}">About the Team</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">About</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about_project' %}">About the Project</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'technical_info' %}">Technical Information</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about_team' %}">About the Team</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'News.html' %}">News</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'Contact.html' %}">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'news' %}">News</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">Contact</a>
 </li></ul>
               </div>
             </div>
@@ -158,7 +158,7 @@
                   <div class="u-container-layout u-container-layout-2">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-2">Le Yan Su</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-3">Historical Researcher (Japanese, Chinese)</h4>
-                    <p class="u-text u-text-4">A graduate student at the University of Toronto, Department of East Asian Studies. Her interests include the history of science and technology, martitime studies, and material culture studies in East Asia.</p><span class="u-file-icon u-icon u-icon-1" data-href="{% static 'https://www.linkedin.com/in/leyan-su/' %}" data-target="_blank"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-4">A graduate student at the University of Toronto, Department of East Asian Studies. Her interests include the history of science and technology, martitime studies, and material culture studies in East Asia.</p><span class="u-file-icon u-icon u-icon-1" data-href="{% static 'https://www.linkedin.com/in/leyan-su/' %}" data-target="_blank"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@
                   <div class="u-container-layout u-container-layout-4">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-5">Hayun Kim</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-6">Programmer​ (front-end)</h4>
-                    <p class="u-text u-text-7">An undergraduate student at the University of Toronto, majoring in mathematics, cognitive science, and computer science. Her interests include website designing, data analysis, and computational linguistics.</p><span class="u-file-icon u-icon u-icon-2" data-href="{% static 'https://www.linkedin.com/in/hayun-judy-kim/' %}" data-target="_blank"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-7">An undergraduate student at the University of Toronto, majoring in mathematics, cognitive science, and computer science. Her interests include website designing, data analysis, and computational linguistics.</p><span class="u-file-icon u-icon u-icon-2" data-href="{% static 'https://www.linkedin.com/in/hayun-judy-kim/' %}" data-target="_blank"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -180,7 +180,7 @@
                   <div class="u-container-layout u-container-layout-6">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-8">Yehjeen Cha</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-9">Historical Researcher (Korean)</h4>
-                    <p class="u-text u-text-10"> An undergraduate student at the University of Toronto majoring in Political Science and Art History. Her interests include East Asian history, colonialism and archival research.&nbsp;</p><span class="u-file-icon u-icon u-icon-3" data-href="{% static 'https://www.linkedin.com/in/yehjeen-cha' %}" data-target="_blank"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-10"> An undergraduate student at the University of Toronto majoring in Political Science and Art History. Her interests include East Asian history, colonialism and archival research.&nbsp;</p><span class="u-file-icon u-icon u-icon-3" data-href="{% static 'https://www.linkedin.com/in/yehjeen-cha' %}" data-target="_blank"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@
                     <p class="u-text u-text-13">An undergraduate student at thte University of Toronto&nbsp;<b>
                         <span style="font-weight: 400;">d</span>
                         <span style="font-weight: 400;">ouble majoring in Computer Science and History &amp; Philosophy of Science &amp; Technology. Her interests include digital humanities and narratology.&nbsp;</span></b>
-                    </p><span class="u-file-icon u-icon u-icon-4" data-href="{% static 'https://www.linkedin.com/in/rachel-xie-503971210/' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-4" data-href="{% static 'https://www.linkedin.com/in/rachel-xie-503971210/' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -206,7 +206,7 @@
                     <h4 class="u-custom-font u-font-oswald u-text u-text-14">Maryam Mohammad&nbsp;</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-15">Historical Researcher (Urdu)</h4>
                     <p class="u-text u-text-16">An undergraduate student at the University of Toronto Mississauga. With a double major in Sociology and Women, Gender and Sexuality Studies, and a minor in South Asian Humanities, their interests include obsreving the world around her.&nbsp;<br>
-                    </p><span class="u-file-icon u-icon u-icon-5" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-5" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -222,7 +222,7 @@
                       <span style="font-weight: 400;"><b>
                           <span style="font-weight: 400;">n undergraduate student at the University of Toronto, double majoring in Computer Science and Molecular Genetics. Her interests include software development and web design.&nbsp;</span></b>
                       </span>
-                    </p><span class="u-file-icon u-icon u-icon-6" data-href="{% static 'https://www.linkedin.com/in/naomi-suzuki/' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-6" data-href="{% static 'https://www.linkedin.com/in/naomi-suzuki/' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -236,7 +236,7 @@
                     </h4>
                     <p class="u-text u-text-22"> An&nbsp;<b>
                         <span style="font-weight: 400;">undergraduate historical researcher at the University of Toronto. A deep interest in the intersection of science and history, has led her to major in Mathematics and the History and Philosophy of Science and Technology</span>.</b>
-                    </p><span class="u-file-icon u-icon u-icon-7" data-href="{% static 'https://www.linkedin.com/in/zannatul-s-isaque/' %}" data-target="_blank"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-7" data-href="{% static 'https://www.linkedin.com/in/zannatul-s-isaque/' %}" data-target="_blank"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -247,7 +247,7 @@
                   <div class="u-container-layout u-container-layout-16">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-23">Rue</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-24">Programmer (front-end)</h4>
-                    <p class="u-text u-text-25">Description:</p><span class="u-file-icon u-icon u-icon-8" data-href="{% static 'mailto:lexsciasia@gmail.com' %}" data-target="_blank"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-25">Description:</p><span class="u-file-icon u-icon u-icon-8" data-href="{% static 'mailto:lexsciasia@gmail.com' %}" data-target="_blank"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@
                     <h4 class="u-custom-font u-font-oswald u-text u-text-26">Fiona Hoang</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-27">Historical Researcher (​Vietnamese)</h4>
                     <p class="u-text u-text-28">An undergraduate student at the Univeristy of Toronto majoring in Psychology and Computational Cognition. Her interests include polylingualism and computational linguistics.&nbsp;<br>
-                    </p><span class="u-file-icon u-icon u-icon-9" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-9" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -270,7 +270,7 @@
                   <div class="u-container-layout u-container-layout-20">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-29">Name</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-30">Programmer</h4>
-                    <p class="u-text u-text-31">Description:</p><span class="u-file-icon u-icon u-icon-10" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-31">Description:</p><span class="u-file-icon u-icon u-icon-10" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -285,7 +285,7 @@
                       <span style="font-weight: 400;">A</span>
                       <span style="font-weight: 400;">n&nbsp;</span><b>
                         <span style="font-weight: 400;">undergraduate at the University of Toronto majoring in Economics and Public Policy with a focus on Data Analytics. His interests include equitable policy development, history of race in South Asia as well as South Asian poetry and Sufism.</span>&nbsp;</b>
-                    </p><span class="u-file-icon u-icon u-icon-11" data-href="{% static ' mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-11" data-href="{% static ' mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -296,7 +296,7 @@
                   <div class="u-container-layout u-container-layout-24">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-35">Name</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-36">Programmer</h4>
-                    <p class="u-text u-text-37">Description:</p><span class="u-file-icon u-icon u-icon-12" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-37">Description:</p><span class="u-file-icon u-icon u-icon-12" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -310,7 +310,7 @@
                     <p class="u-text u-text-40"> An&nbsp;<b>
                         <span style="font-weight: 400;">u</span>
                         <span style="font-weight: 400;">ndergraduate student at the University of Toronto, double majoring in Global Health and Psychology. Her interests include research on South Asian communities, as well as sensory perception.&nbsp;</span></b>
-                    </p><span class="u-file-icon u-icon u-icon-13" data-href="{% static 'https://www.linkedin.com/in/zaheen-noor-234b4822a/' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    </p><span class="u-file-icon u-icon u-icon-13" data-href="{% static 'https://www.linkedin.com/in/zaheen-noor-234b4822a/' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
@@ -321,7 +321,7 @@
                   <div class="u-container-layout u-container-layout-28">
                     <h4 class="u-custom-font u-font-oswald u-text u-text-41">Name</h4>
                     <h4 class="u-custom-font u-text u-text-font u-text-palette-1-base u-text-42">Programmer</h4>
-                    <p class="u-text u-text-43">Description:</p><span class="u-file-icon u-icon u-icon-14" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'images/174857.png' %}" alt=""></span>
+                    <p class="u-text u-text-43">Description:</p><span class="u-file-icon u-icon u-icon-14" data-href="{% static 'mailto:lexsciasia@gmail.com' %}"><img src="{% static 'base/images/174857.png' %}" alt=""></span>
                   </div>
                 </div>
               </div>
