@@ -11,11 +11,12 @@ from pyairtable.formulas import match
 
 # TODO: function for getting the search term?
 
-# todo: build a filtering function??
+# todo: build a filtering function?? -- inside a given tag, filter based on language? -- airtable should have internal filters
 
 # TODO: multiple types of search? (searching just name, searching through tags and text body and name? etc?)
 # the fields are: name, transliteration, english translation, language, description, part of speech, derivative terms,
 #   equivalents, historical notes, institutional usage, references, attachments (may have more than 1), captions, tags
+#   expanded search
 def search_result_broad(search_term: str, table: Table) -> str:
     """
     searches through the field's name, translation, english translation, derivative terms, historical notes,
