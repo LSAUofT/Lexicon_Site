@@ -1,9 +1,13 @@
 from django.urls import path
 
-from . import views
+from base.views import *
 
 urlpatterns = [
-    path('', views.home, name='home'),  # for main home page
-    path('about/', views.about, name='about'),  # for about page
-    path('contact/', views.contact, name='contact'),  # for contact page
+    path('', home, name='home'),  # home page
+    path('about/', about, name='about'),  # about page
+    path('about/project/', about_project, name='about_project'), # about the project
+    path('about/team/', about_team, name='about_team'), # about the team
+    path('about/technical-information/', technical_information, name='technical_info'),
+    path('contact/', contact, name='contact'),  # contact page
+    path('news/', news, name='news'), # news page
 ]

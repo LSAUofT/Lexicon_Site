@@ -1,0 +1,152 @@
+ .u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url("images/LSAbannerimage.png");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 976px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 8px rgba(66,84,101,0.4);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 205px 70px 0;
+}
+
+.u-section-1 .u-text-2 {
+  letter-spacing: 0px;
+  line-height: 1.4;
+  font-size: 1.5rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  width: 714px;
+  margin: 30px auto 0;
+}
+
+.u-section-1 .u-btn-1 {
+  letter-spacing: 1px;
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 61px auto 0;
+}
+
+.u-section-1 .u-text-3 {
+  font-size: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  letter-spacing: 3px;
+  width: 714px;
+  margin: 307px auto 0;
+}
+
+.u-section-1 .u-btn-2 {
+  border-style: none;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin: 22px 489px 0 auto;
+  padding: 0;
+}
+
+.u-section-1 .u-btn-3 {
+  border-style: none;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin: -23px auto 60px 462px;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 805px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: 861px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-right: 289px;
+  }
+
+  .u-section-1 .u-btn-3 {
+    margin-left: 262px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 617px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-right: 69px;
+  }
+
+  .u-section-1 .u-btn-3 {
+    margin-left: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 463px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 3.4375rem;
+    width: 540px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 60px;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-btn-3 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 292px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 2.125rem;
+    width: 340px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 340px;
+  }
+}
