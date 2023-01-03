@@ -2,8 +2,10 @@
 import os
 from pprint import pprint
 
+import pyairtable.formulas
 from pyairtable import Table
-from pyairtable.formulas import match
+from pyairtable.formulas import match, EQUAL, FIELD, to_airtable_value, OR, FIND
+
 
 # TODO: make the documentation better reflect discoveries made here
 # NOTE: my local code had a personal access token as a global variable here, you will have to generate your own
@@ -11,25 +13,34 @@ from pyairtable.formulas import match
 
 # TODO: function for getting the search term?
 
-# todo: build a filtering function?? -- inside a given tag, filter based on language? -- airtable should have internal filters
+# todo: build a filtering function?? -- inside a given tag, filter based on language? -- airtable should have
+#  internal filters
 
-# TODO: multiple types of search? (searching just name, searching through tags and text body and name? etc?)
-# the fields are: name, transliteration, english translation, language, description, part of speech, derivative terms,
-#   equivalents, historical notes, institutional usage, references, attachments (may have more than 1), captions, tags
-#   expanded search
 def search_result_broad(search_term: str, table: Table) -> str:
     """
-    searches through the field's name, translation, english translation, derivative terms, historical notes,
-    tags, captions
+    searches for a match in name, transliteration, and derivative terms. (will work in any language).
     """
-    # name, transliteration for sure only have one set result
-    # english translation is list of terms?
+    # for finding something that has an exact match of name (just one string):
+    name_match = EQUAL(FIELD("Name"), to_airtable_value(search_term))
 
+    # for finding transliteration (just one string):
+    translit_match = EQUAL(FIELD("Transliteration"), to_airtable_value(search_term))
+
+    # for finding derivative terms (one long string, will contain \n to indicate line breaks):
+    deriv_match = FIND(to_airtable_value(search_term), FIELD("Derivative Terms"))
+
+    # combining to make formula
+    formula = OR(name_match, translit_match, deriv_match)
+
+    return table.all(formula=formula)
 
 
 def search_result_narrow(search_term: str, table: Table) -> str:
-    """write a function that will take a search term, query the airtable API,
-    return a list of all the items with the same term"""
+    """
+    This function will take a search term, query the airtable API,
+    return a list containing string representation(s) of the record(s) that
+    has that search term as a name.
+    """
     # build formula based on search term
     # this will be a VERY rudimentary search (will only search the name of the term, looking for exact match)
     formula = match({"Name": search_term}, match_any=True)
@@ -41,12 +52,11 @@ def search_result_narrow(search_term: str, table: Table) -> str:
 
 
 if __name__ == '__main__':
-    # building table: TEST_KEY is the removed personal access token, the second arg is base id for test base,
-    #   third arg is the name of the table we want to look at
-    table = Table(os.environ["TEMP_KEY"], "appfaeFztiHKrh9DG", "Imported table")
-    result = search_result_narrow("心理學", table)
-    print(result)
-    if "心理學" in result[0]['fields']['Description']:
-        print("yes")
-    else:
-        print("no")
+    # building table: args are personal access token, base id, and table name
+    target_table = Table(os.environ["TEMP_KEY"], "appfaeFztiHKrh9DG", "Imported table")
+
+    # print statements for testing
+    print(search_result_narrow("民族", target_table))
+    print(search_result_broad("生態學", target_table))
+    print(search_result_broad("shengtai", target_table))
+    print(search_result_broad("生態學家", target_table))
