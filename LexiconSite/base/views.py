@@ -34,6 +34,7 @@ def contact(request):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # TODO: include code here to actually send the email
+            #  (link: https://docs.djangoproject.com/en/4.1/topics/email/)
 
             # redirect to a new URL:
             # this is going to try to send user to page with URL /thanks/ -- absolute path
@@ -41,21 +42,14 @@ def contact(request):
             return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = ContactForm()
-        # renders form according to the formatting described in nice_form.html
-        rendered_form = form.render("base/nice_form.html")
-        context = {'form': rendered_form}
+    # else:
+        # form = ContactForm()
+        # # renders form according to the formatting described in nice_form.html
+        # rendered_form = form.render("base/nice_form.html")
+        # context = {'form': rendered_form}
 
-    return render(request, "base/Contact.html", context)  # sends form information to be rendered
-
+    # return render(request, "base/Contact.html", context)  # sends form information to be rendered
+    return render(request, "base/Contact.html")
 
 def news(request):
     return render(request, "base/News.html")
-
-
-# if __name__ == '__main__':
-#     from LexiconSite.base.forms import ContactForm
-#     basic_form = ContactForm()
-#     rend_form = basic_form.render("nice_form.html")
-#     print(rend_form)

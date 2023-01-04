@@ -8,3 +8,4 @@ class ContactForm(forms.Form):
     user_message = forms.CharField(label='Your message', widget=forms.Textarea)
 
     # TODO: add option to cc yourself?
+    # TODO: add help text?
