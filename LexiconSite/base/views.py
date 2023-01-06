@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
+from django.core.mail import send_mail
 
 # TODO: Update the html file names
 
@@ -25,31 +26,40 @@ def technical_information(request):
     return render(request, "base/Technical-Information.html")
 
 
+# this function does give back an error, i don't know why
 def contact(request):
-    # if this is a POST request we need to process the form data
+    print(request.method)
+
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = ContactForm(request.POST)
-        # check whether it's valid:
+        form = ContactForm(request.POST) # create a form instance and populate it with data from the request:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # TODO: include code here to actually send the email
-            #  (link: https://docs.djangoproject.com/en/4.1/topics/email/)
+            print("FIRST IF HERE")  # it currently doesn't seem to be getting in here at all?
+
+            send_mail(
+                'Testing',  # this is the subject
+                'Here is the message.',  # this is the message
+                None,  # email that this message from -- b/c None, sent from default webmaster@localhost
+                ['rxie2002@gmail.com'],  # email this is getting sent to (can have more than one)
+                fail_silently=False,
+            )
 
             # redirect to a new URL:
             # this is going to try to send user to page with URL /thanks/ -- absolute path
-            # this doesn't currently appear to...do...anything?
+            # currently, WILL cause errors
             return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
-    # else:
-        # form = ContactForm()
+    else:
+        form = ContactForm()
         # # renders form according to the formatting described in nice_form.html
         # rendered_form = form.render("base/nice_form.html")
         # context = {'form': rendered_form}
+        print("SECOND IF HERE")
 
     # return render(request, "base/Contact.html", context)  # sends form information to be rendered
-    return render(request, "base/Contact.html")
+    return render(request, "base/Contact.html", {'form': form})
+
 
 def news(request):
     return render(request, "base/News.html")
