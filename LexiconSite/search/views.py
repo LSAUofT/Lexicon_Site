@@ -12,7 +12,7 @@ class SearchHomeView(TemplateView):
 class SearchResultView(ListView):  # notes: object_list is the default name for the context object ListView returns
     template_name = 'search/Search-Results.html'
 
-    def get_queryset(self):  # new
-        query = self.request.GET.get("q")
-        object_list = [1, 2, 3]    # this is placeholder at the moment, can connect to search function later
+    def get_queryset(self):  # todo: figure out how to connect pyairtable search functions
+        query = self.request.GET.get("q")   # from QueryDict, gets item corresponding to key 'q'
+        object_list = [num for num in range(1, len(query) + 1)]    # this will display "results" a number of times equal to number of chars in search query
         return object_list
