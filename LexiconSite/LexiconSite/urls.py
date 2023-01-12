@@ -21,5 +21,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),  # URLS for base app
+    path('', include('search.urls')),   # URLs for search app
 ]
 #  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
