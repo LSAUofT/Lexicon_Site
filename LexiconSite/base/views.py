@@ -26,7 +26,9 @@ def technical_information(request):
     return render(request, "base/Technical-Information.html")
 
 
-# this function does give back an error, i don't know why
+# TODO: current error:
+#   "ConnectionRefusedError: [WinError 10061] No connection could be made because
+#   the target machine actively refused it"
 def contact(request):
     print(request.method)
 
