@@ -26,30 +26,27 @@ def technical_information(request):
     return render(request, "base/Technical-Information.html")
 
 
-# TODO: current error:
-#   "ConnectionRefusedError: [WinError 10061] No connection could be made because
-#   the target machine actively refused it"
 def contact(request):
     print(request.method)
 
     if request.method == 'POST':
-        form = ContactForm(request.POST) # create a form instance and populate it with data from the request:
+        form = ContactForm(request.POST)  # create a form instance and populate it with data from the request:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            print("FIRST IF HERE")  # it currently doesn't seem to be getting in here at all?
+            # process the data in form.cleaned_data (a dict) as required
+            print(form.cleaned_data['user_message'])
 
             send_mail(
-                'Testing',  # this is the subject
-                'Here is the message.',  # this is the message
-                None,  # email that this message from -- b/c None, sent from default webmaster@localhost
-                ['rxie2002@gmail.com'],  # email this is getting sent to (can have more than one)
+                'Lex. Sci. Asia: Message Received',  # subject
+                form.cleaned_data['user_message'],  # email message
+                None,  # email that this message from -- b/c None, sent from default email (defined in settings)
+                ['lexscieasia@gmail.com'],  # email this is getting sent to (can have more than one)
                 fail_silently=False,
             )
 
             # redirect to a new URL:
             # this is going to try to send user to page with URL /thanks/ -- absolute path
-            # currently, WILL cause errors
-            return HttpResponseRedirect('/thanks/')
+            # currently, WILL cause errors, something's up with the URLs
+            return HttpResponseRedirect('base/Thanks.html')
 
     # if a GET (or any other method) we'll create a blank form
     else:
