@@ -35,18 +35,18 @@ def contact(request):
             # process the data in form.cleaned_data (a dict) as required
             print(form.cleaned_data['user_message'])
 
-            send_mail(
-                'Lex. Sci. Asia: Message Received',  # subject
-                form.cleaned_data['user_message'],  # email message
-                None,  # email that this message from -- b/c None, sent from default email (defined in settings)
-                ['lexscieasia@gmail.com'],  # email this is getting sent to (can have more than one)
-                fail_silently=False,
-            )
+            # send_mail(
+            #     'Lex. Sci. Asia: Message Received',  # subject
+            #     form.cleaned_data['user_message'],  # email message
+            #     None,  # email that this message from -- b/c None, sent from default email (defined in settings)
+            #     ['lexscieasia@gmail.com'],  # email this is getting sent to (can have more than one)
+            #     fail_silently=False,
+            # )
 
             # redirect to a new URL:
             # this is going to try to send user to page with URL /thanks/ -- absolute path
             # currently, WILL cause errors, something's up with the URLs
-            return HttpResponseRedirect('base/Thanks.html')
+            return HttpResponseRedirect('thanks/')  # this will take you to the associated URL
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -62,3 +62,7 @@ def contact(request):
 
 def news(request):
     return render(request, "base/News.html")
+
+
+def thanks(request):
+    return render(request, "base/Thanks.html")
