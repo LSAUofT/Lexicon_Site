@@ -1,11 +1,15 @@
 from django import forms
 
 
-# note: going to Contact page causes "OSError: Bad URL"
 class ContactForm(forms.Form):
-    user_name = forms.CharField(label='Your name', max_length=100)
+    # todo: modify widgets such that they have all the attributes from original .html file
+    user_name = forms.CharField(label='Your name', max_length=100,
+                                widget=forms.TextInput(
+                                        attrs={'placeholder': 'Enter Your Name',
+                                               'class': 'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}
+                                    )
+                                )
     user_address = forms.EmailField(label='Your email', required=True)
     user_message = forms.CharField(label='Your message', widget=forms.Textarea)
 
     # TODO: add option to cc yourself?
-    # TODO: add help text?

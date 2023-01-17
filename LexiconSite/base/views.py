@@ -33,7 +33,7 @@ def contact(request):
         form = ContactForm(request.POST)  # create a form instance and populate it with data from the request:
         if form.is_valid():
             # process the data in form.cleaned_data (a dict) as required
-            print(form.cleaned_data['user_message'])
+            print(form.cleaned_data)
 
             # send_mail(
             #     'Lex. Sci. Asia: Message Received',  # subject
