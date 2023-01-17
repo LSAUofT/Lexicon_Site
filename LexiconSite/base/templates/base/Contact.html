@@ -76,25 +76,29 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Contact Us</h2>
         <div class="u-form u-form-1">
+<!--    THIS IS THE START OF THE POINT WHERE I'M MESSING WITH STUFF-->
             <form action="" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
 <!--          <form action="//publish.nicepage.com/Form/Process" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">-->
               {% csrf_token %}
-                {{ form.user_address }}
-                {{ form.user_message }}
             <div class="u-form-group u-form-name u-label-none">
-                {{ form.user_name.id_for_label }}
+                {{ form.user_name.label }}
 <!--              <label for="name-3b9a" class="u-label">Name</label>-->
 <!--              <input type="text" placeholder="Enter your Name" id="name-3b9a" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">-->
                 {{ form.user_name }}
-<!--            </div>-->
-<!--            <div class="u-form-email u-form-group u-label-none">-->
+            </div>
+            <div class="u-form-email u-form-group u-label-none">
+                {{ form.user_address.label }}
+                {{ form.user_address }}
 <!--              <label for="email-3b9a" class="u-label">Email</label>-->
 <!--              <input type="email" placeholder="Enter a valid email address" id="email-3b9a" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">-->
-<!--            </div>-->
-<!--            <div class="u-form-group u-form-message u-label-none">-->
+            </div>
+            <div class="u-form-group u-form-message u-label-none">
+                {{ form.user_message.label }}
+                {{ form.user_message }}
 <!--              <label for="message-3b9a" class="u-label">Message</label>-->
 <!--              <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>-->
-<!--            </div>-->
+            </div>
+<!--  THIS IS THE END OF THE POINT WHERE I AM MESSING WITH STUFF-->
             <div class="u-align-left u-form-group u-form-submit">
               <a href="{% static '#' %}" class="u-btn u-btn-submit u-button-style">Submit</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
