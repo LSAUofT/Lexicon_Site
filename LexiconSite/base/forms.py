@@ -6,7 +6,8 @@ class ContactForm(forms.Form):
     user_name = forms.CharField(label='Your name', max_length=100,
                                 widget=forms.TextInput(
                                         attrs={'placeholder': 'Enter Your Name',
-                                               'class': 'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white'}
+                                               'class': 'u-border-1 u-border-grey-30 u-input u-input-rectangle u-white',
+                                               'id': 'name-3b9a'}
                                     )
                                 )
     user_address = forms.EmailField(label='Your email', required=True)
