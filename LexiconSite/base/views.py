@@ -39,7 +39,7 @@ def contact(request):
                 'Lex. Sci. Asia: Message Received',  # subject
                 form.cleaned_data['user_message'],  # email message
                 None,  # email that this message from -- b/c None, sent from default email (defined in settings)
-                ['lexscieasia@gmail.com'],  # email this is getting sent to (can have more than one)
+                ['lexsciasia@gmail.com'],  # email this is getting sent to (can have more than one)
                 fail_silently=False,
             )
 
