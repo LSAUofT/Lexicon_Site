@@ -10,5 +10,6 @@ urlpatterns = [
     path('about/team/', about_team, name='about_team'), # about the team
     path('about/technical-information/', technical_information, name='technical_info'),
     path('contact/', contact, name='contact'),  # contact page
+    path('contact/thanks/', thanks, name='thanks'),  # thanks page, testing
     path('news/', news, name='news'), # news page
 ]

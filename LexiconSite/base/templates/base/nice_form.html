@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nice Form</title>
+<!--    TODO: figure out how to use this template? currently not doing anything-->
+    {% for field in form %}
+        <div class="u-form-group u-form-name u-label-none">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+</head>
+<body>
+
+</body>
+</html>
