@@ -55,6 +55,9 @@ def search_result_narrow(search_term: str, table: Table) -> str:
     return results
 
 def download_images(search_result: list):
+    """
+    search_results is assumed to be in the form of a list returned by pyairtable's search function
+    """
     # TODO: create function for images
     # print statements for testing
     import requests
