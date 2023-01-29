@@ -8,13 +8,16 @@ from pyairtable.formulas import match, EQUAL, FIELD, to_airtable_value, OR, FIND
 
 
 # TODO: make the documentation better reflect discoveries made here
+
+# TODO: fix the authentication key
 # NOTE: my local code had a personal access token as a global variable here, you will have to generate your own
 #   following the instructions on Notion, then add it to your environment variables
 
-# TODO: function for getting the search term?
+# NOTE: function for getting the search term from user input [being worked on in search app]
 
 # todo: build a filtering function?? -- inside a given tag, filter based on language? -- airtable should have
 #  internal filters
+
 
 def search_result_broad(search_term: str, table: Table) -> str:
     """
@@ -35,6 +38,7 @@ def search_result_broad(search_term: str, table: Table) -> str:
     return table.all(formula=formula)
 
 
+
 def search_result_narrow(search_term: str, table: Table) -> str:
     """
     This function will take a search term, query the airtable API,
@@ -50,10 +54,29 @@ def search_result_narrow(search_term: str, table: Table) -> str:
 
     return results
 
+def download_images(search_result: list):
+    """
+    search_results is assumed to be in the form of a list returned by pyairtable's search function
+    """
+    # TODO: create function for images
+    # print statements for testing
+    import requests
+    image_list = search_result[0]['fields']['Images']
+    for item in image_list:
+        print(item)
+        image_url = item['url']
+        img_data = requests.get(image_url).content
+        with open('image_name.jpg', 'wb') as handler:
+            handler.write(img_data)
+            # figure out how to save in static
+            # figure out how to rewrite the name
+
+
 
 if __name__ == '__main__':
     # building table: args are personal access token, base id, and table name
     target_table = Table(os.environ["TEMP_KEY"], "appfaeFztiHKrh9DG", "Imported table")
+    download_images(search_result_broad("shengtai", target_table))
 
     # print statements for testing
     print(search_result_narrow("民族", target_table))
