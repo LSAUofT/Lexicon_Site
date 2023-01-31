@@ -84,8 +84,3 @@ if __name__ == '__main__':
     print(search_result_broad("shengtai", target_table))
     print(search_result_broad("生態學家", target_table))
 
-
-
-
-
-
