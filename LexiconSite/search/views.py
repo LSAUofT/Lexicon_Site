@@ -5,6 +5,14 @@ from django.views.generic import TemplateView, ListView
 # todo: based on tutorial, will have to create objects that
 #   represent each search result
 
+def search(request):
+    return render(request, 'search/Search.html')
+
+
+def advanced_search(request):
+    return render(request, 'search/Advanced-Search.html')
+
+
 class SearchHomeView(TemplateView):
     template_name = 'search/Search-Home.html'
 
