@@ -1,12 +1,22 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-
+from .forms import SearchForm
 
 # todo: based on tutorial, will have to create objects that
 #   represent each search result
 
+
 def search(request):
-    return render(request, 'search/Search.html')
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            print("search registered!")
+
+
+    else:
+        form = SearchForm()
+
+    return render(request, 'search/Search.html', {'form': form})
 
 
 def advanced_search(request):

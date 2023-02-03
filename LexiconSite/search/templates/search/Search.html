@@ -80,8 +80,11 @@
           <form action="#" method = "POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="custom" name="search">
             {% csrf_token %}
             <div class="u-form-group u-label-none u-form-group-1">
-              <label for="email-2555" class="u-label u-label-1">Search</label>
-              <input type="text" placeholder="Enter the word you would like to learn about" id="email-2555" name="Search" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
+<!--                {{ form.search_query.label }}-->
+<!--                todo: figure out what this label is doing?? hayun???-->
+<!--              <label for="email-2555" class="u-label u-label-1">Search</label>-->
+<!--              <input type="text" placeholder="Enter the word you would like to learn about" id="email-2555" name="Search" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">-->
+                {{ form.search_query }}
             </div>
             <div class="u-align-left u-form-group u-form-submit u-label-none">
               <a href="{% static '#' %}" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">search<br>
