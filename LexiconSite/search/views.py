@@ -38,7 +38,7 @@ def search(request):
             print(search_result_broad(form.cleaned_data['search_query'], target_table))
 
             # this is apparently valid?
-            return render(request, 'search/Search-Home.html')
+            return render(request, 'search/Search-Result.html')
 
     else:
         form = SearchForm()
