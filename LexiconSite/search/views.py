@@ -50,6 +50,10 @@ def advanced_search(request):
     return render(request, 'search/Advanced-Search.html')
 
 
+def search_results(request):
+    return render(request, 'search/Search-Result.html')
+
+
 class SearchHomeView(TemplateView):
     template_name = 'search/Search-Home.html'
 
