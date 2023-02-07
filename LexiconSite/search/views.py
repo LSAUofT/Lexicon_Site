@@ -25,18 +25,20 @@ def search_result_broad(search_term: str, table: Table) -> str:
     # combining to make formula
     formula = OR(name_match, translit_match, deriv_match)
 
-    return table.all(formula=formula)
+    return table.all(formula=formula)  # returns a list of records, which are themselves dicts
 
 
 def search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            print("search registered!")
             print(form.cleaned_data['search_query'])
             target_table = Table(os.environ["TEMP_KEY"], "appfaeFztiHKrh9DG", "Imported table")
 
-            # todo: look into redirect?
+            print(search_result_broad(form.cleaned_data['search_query'], target_table))
+
+            # this is apparently valid?
+            return render(request, 'search/Search-Home.html')
 
     else:
         form = SearchForm()
