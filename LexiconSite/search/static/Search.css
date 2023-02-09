@@ -1,4 +1,4 @@
- .u-section-1 {
+.u-section-1 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url("images/LSAbannerimage.png");
   background-position: 50% 50%;
 }
@@ -20,7 +20,7 @@
 .u-section-1 .u-form-1 {
   height: 75px;
   width: 704px;
-  margin: 63px auto 60px;
+  margin: 63px auto 0;
 }
 
 .u-section-1 .u-form-group-1 {
@@ -39,13 +39,64 @@
   border-style: solid;
   font-weight: 600;
   text-transform: uppercase;
+  background-image: none;
   padding: 11px 31px 12px 29px;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 1.125rem;
+  margin: -5px 763px 0 229px;
+}
+
+.u-section-1 .u-btn-2 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin: -20px auto 0 354px;
+  padding: 0;
+}
+
+.u-section-1 .u-text-3 {
+  font-size: 1.125rem;
+  margin: -24px 445px 3px 467px;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-text-1 {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 663px;
+    margin-left: 129px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: 154px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 367px;
+    margin-right: 345px;
+    width: 148px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-text-2 {
+    margin-right: 553px;
+    margin-left: 19px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 257px;
+    margin-right: 235px;
   }
 }
 
@@ -57,6 +108,16 @@
   .u-section-1 .u-form-1 {
     width: 540px;
   }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 392px;
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 167px;
+    margin-right: 145px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -66,5 +127,14 @@
 
   .u-section-1 .u-form-1 {
     width: 340px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 192px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 67px;
+    margin-right: 45px;
   }
 }
