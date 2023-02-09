@@ -1,3 +1,5 @@
+import pprint
+
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from .forms import SearchForm
@@ -32,13 +34,13 @@ def search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data['search_query'])
             target_table = Table(os.environ["TEMP_KEY"], "appfaeFztiHKrh9DG", "Imported table")
 
-            print(search_result_broad(form.cleaned_data['search_query'], target_table))
+            r = search_result_broad(form.cleaned_data['search_query'], target_table)
+            pprint.pp(r)
 
-            # this is apparently valid?
-            return render(request, 'search/Search-Result.html')
+            # have temporarily made this "Search-Results.html" (note the plural) to test result finding
+            return render(request, 'search/Search-Results.html', {'form': form, 'results': r})
 
     else:
         form = SearchForm()

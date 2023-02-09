@@ -8,5 +8,5 @@ urlpatterns = [
     path('search/', search, name='search'),
     # path('search/results/', SearchResultView.as_view(), name='search_results')  # search results page
     path('search/advanced', advanced_search, name='advanced_search'),
-    path('searh/results', search_results, name='search_results')
+    path('search/results', search_results, name='search_results')
 ]
