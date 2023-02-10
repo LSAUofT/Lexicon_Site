@@ -11,6 +11,5 @@ urlpatterns = [
     path('about/technical-information/', technical_information, name='technical_info'),
     path('contact/', contact, name='contact'),  # contact page
     path('contact/thanks/', thanks, name='thanks'),  # thanks page, testing
-    path('news/', news, name='news'),  # news page
-    path('lexicon/', lexicon, name='lexicon')  # for testing, the lexicon page
+    path('news/', news, name='news'), # news page
 ]

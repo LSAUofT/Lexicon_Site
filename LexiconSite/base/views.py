@@ -60,7 +60,3 @@ def news(request):
 
 def thanks(request):
     return render(request, "base/Thanks.html")
-
-
-def lexicon(request):
-    return render(request, "base/Lexicon.html")

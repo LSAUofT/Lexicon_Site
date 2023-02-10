@@ -5,7 +5,6 @@ from pprint import pprint
 import pyairtable.formulas
 from pyairtable import Table
 from pyairtable.formulas import match, EQUAL, FIELD, to_airtable_value, OR, FIND
-import random, string
 
 
 # TODO: make the documentation better reflect discoveries made here
@@ -55,14 +54,6 @@ def search_result_narrow(search_term: str, table: Table) -> str:
 
     return results
 
-unique_ids = set()
-
-def generate_id():
-    new_id = "".join(random.choices(string.ascii_letters + string.digits, k=8))
-    while new_id in unique_ids:
-        new_id = "".join(random.choices(string.ascii_letters + string.digits, k=8))
-    return new_id
-
 def download_images(search_result: list):
     """
     search_results is assumed to be in the form of a list returned by pyairtable's search function
@@ -92,3 +83,4 @@ if __name__ == '__main__':
     print(search_result_broad("生態學", target_table))
     print(search_result_broad("shengtai", target_table))
     print(search_result_broad("生態學家", target_table))
+
