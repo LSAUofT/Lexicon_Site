@@ -8,11 +8,14 @@
 Hey, you found the search results page!
 
 <ul>
-  {% for item in object_list %}
     <li>
-      result
+      Your Query: {{ form.data.search_query }}
     </li>
-  {% endfor %}
+    {% for item in results %}
+    <li>
+      {{ item }}
+    </li>
+    {% endfor %}
 </ul>
 </body>
 </html>
