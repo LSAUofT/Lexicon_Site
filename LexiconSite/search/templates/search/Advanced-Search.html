@@ -6,10 +6,10 @@
     <meta name="keywords" content="Lexicon of Science in Asia">
     <meta name="description" content="">
     <title>Advanced Search</title>
-    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
 <link rel="stylesheet" href="{% static 'Advanced-Search.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 5.3.6, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -78,14 +78,13 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-font-roboto-condensed u-text u-text-white u-text-1">SEARCH</h1>
         <div class="u-form u-form-1">
-          <form action="https://forms.nicepagesrv.com/v2/form/process" method = "POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="search">
-            {% csrf_token %}
+          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="email" name="search">
             <div class="u-form-group u-label-none u-form-group-1">
               <label for="email-2555" class="u-label u-label-1">Email</label>
               <input type="text" placeholder="Enter the word you would like to learn about" id="email-2555" name="Search" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">
             </div>
             <div class="u-align-left u-form-group u-form-submit u-label-none">
-              <a href="{% static '#' %}" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">search<br>
+              <a href="#" class="u-active-grey-90 u-border-4 u-border-active-grey-90 u-border-grey-75 u-border-hover-grey-90 u-btn u-btn-round u-btn-submit u-button-style u-grey-75 u-hover-grey-90 u-radius-50 u-btn-1">search<br>
               </a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
@@ -95,9 +94,9 @@
             <input type="hidden" name="formServices" value="853f76987b6832c8b7af6f1b3d72b7a9">
           </form>
         </div>
-        <a href="{% static 'https://nicepage.com' %}" class="u-btn u-button-style u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-2"> filter&nbsp; <span class="u-icon u-text-palette-1-base"><svg class="u-svg-content" viewBox="0 -32 426.66667 426"><path d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0"></path><path d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0"></path></svg><img></span>
+        <a href="https://nicepage.com" class="u-btn u-button-style u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-2"> filter&nbsp; <span class="u-icon u-text-palette-1-base"><svg class="u-svg-content" viewBox="0 -32 426.66667 426"><path d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0"></path><path d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0"></path></svg><img></span>
         </a>
-        <a href="{% static 'https://nicepage.com' %}" class="u-btn u-button-style u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-3">filter 2&nbsp;<span class="u-icon u-text-palette-1-base"><svg class="u-svg-content" viewBox="0 -32 426.66667 426" style="width: 1em; height: 1em;"><path d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0"></path><path d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0"></path></svg><img></span>
+        <a href="https://nicepage.com" class="u-btn u-button-style u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-3">filter 2&nbsp;<span class="u-icon u-text-palette-1-base"><svg class="u-svg-content" viewBox="0 -32 426.66667 426" style="width: 1em; height: 1em;"><path d="m213.332031 181.667969c0 4.265625-1.277343 8.53125-3.625 11.730469l-106.667969 160c-3.839843 5.761718-10.238281 9.601562-17.707031 9.601562h-64c-11.730469 0-21.332031-9.601562-21.332031-21.332031 0-4.269531 1.28125-8.535157 3.625-11.734375l98.773438-148.265625-98.773438-148.269531c-2.34375-3.199219-3.625-7.464844-3.625-11.730469 0-11.734375 9.601562-21.335938 21.332031-21.335938h64c7.46875 0 13.867188 3.839844 17.707031 9.601563l106.667969 160c2.347657 3.199218 3.625 7.464844 3.625 11.734375zm0 0"></path><path d="m426.667969 181.667969c0 4.265625-1.28125 8.53125-3.628907 11.730469l-106.664062 160c-3.839844 5.761718-10.242188 9.601562-17.707031 9.601562h-64c-11.734375 0-21.335938-9.601562-21.335938-21.332031 0-4.269531 1.28125-8.535157 3.628907-11.734375l98.773437-148.265625-98.773437-148.269531c-2.347657-3.199219-3.628907-7.464844-3.628907-11.730469 0-11.734375 9.601563-21.335938 21.335938-21.335938h64c7.464843 0 13.867187 3.839844 17.707031 9.601563l106.664062 160c2.347657 3.199218 3.628907 7.464844 3.628907 11.734375zm0 0"></path></svg><img></span>
         </a>
       </div>
     </section>
