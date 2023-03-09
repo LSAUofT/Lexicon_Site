@@ -1,4 +1,5 @@
 import pprint
+import textwrap
 
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
@@ -11,7 +12,7 @@ import os
 # todo: based on tutorial, will have to create objects that
 #   represent each search result
 
-def search_result_broad(search_term: str, table: Table) -> str:
+def search_result_broad(search_term: str, table: Table) -> list:
     """
     searches for a match in name, transliteration, and derivative terms. (will work in any language).
     """
@@ -30,6 +31,25 @@ def search_result_broad(search_term: str, table: Table) -> str:
     return table.all(formula=formula)  # returns a list of records, which are themselves dicts
 
 
+def generate_result(unprocessed: list):
+    """
+    unprocessed is a list that matches the formatting of records fetched by the AirTable API.
+    """
+    done = []
+
+    for record in unprocessed:
+        new_entry = {'Name': record['fields']['Name'],
+                     'English Translation': record['fields']['English Translation'],
+                     'Historical Notes': textwrap.shorten(record['fields']['Historical Notes'],
+                                                          width=280,
+                                                          placeholder="...")
+                     }
+
+        done.append(new_entry)
+
+    return done
+
+
 def search(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
@@ -38,8 +58,9 @@ def search(request):
 
             r = search_result_broad(form.cleaned_data['search_query'], target_table)
             pprint.pp(r)
+            r_nice = generate_result(r)
 
-            return render(request, 'search/Search-Result.html', {'form': form, 'results': r})
+            return render(request, 'search/Search-Result.html', {'form': form, 'results': r_nice})
 
     else:
         form = SearchForm()

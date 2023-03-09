@@ -79,7 +79,7 @@
         <h1 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-title u-text-1">Results for: {{ form.data.search_query }}</h1>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_f883">
+    <section class="u-align-left u-clearfix u-white u-section-2" id="carousel_f883">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
 <!--            NOTE: everything below this point is unnecessary-->
@@ -88,8 +88,12 @@
 <!--            <div class="u-align-center u-container-style u-custom-item u-grey-15 u-list-item u-repeater-item u-shape-rectangle">-->
 <!--              <div class="u-container-layout u-similar-container u-container-layout-1"></div>-->
         {% for item in results %}
-              {{ item }}
-                <br>
+            {% for key, val in item.items %}
+              {{ key }} : {{ val }}
+            <br>
+            {% endfor %}
+            <div class="u-list u-list-1">
+                </div>
         {% endfor %}
 <!--            </div>-->
 <!--            <div class="u-align-center u-container-style u-custom-item u-grey-5 u-list-item u-repeater-item u-shape-rectangle">-->
