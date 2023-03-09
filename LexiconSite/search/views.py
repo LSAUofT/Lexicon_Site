@@ -39,8 +39,7 @@ def search(request):
             r = search_result_broad(form.cleaned_data['search_query'], target_table)
             pprint.pp(r)
 
-            # have temporarily made this "Search-Results.html" (note the plural) to test result finding
-            return render(request, 'search/Search-Results.html', {'form': form, 'results': r})
+            return render(request, 'search/Search-Result.html', {'form': form, 'results': r})
 
     else:
         form = SearchForm()
