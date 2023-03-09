@@ -77,10 +77,9 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-font-roboto-condensed u-text u-text-white u-text-1">SEARCH</h1>
         <div class="u-form u-form-1">
-          <form action="" method = "POST" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="custom" name="search">
+          <form action="{% url 'search' %}" method = "POST" style="padding: 10px" name="search">
             {% csrf_token %}
             <div class="u-form-group u-label-none u-form-group-1">
-<!--                {{ form.search_query.label }}-->
 <!--                todo: figure out what this label is doing?? hayun???-->
 <!--              <label for="email-2555" class="u-label u-label-1">Search</label>-->
 <!--              <input type="text" placeholder="Enter the word you would like to learn about" id="email-2555" name="Search" class="u-border-4 u-border-white u-input u-input-rectangle u-radius-50 u-white" required="required">-->
