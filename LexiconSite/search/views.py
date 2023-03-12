@@ -14,7 +14,8 @@ import os
 
 def search_result_broad(search_term: str, table: Table) -> list:
     """
-    searches for a match in name, transliteration, and derivative terms. (will work in any language).
+    searches for a match in name, transliteration, derivative terms, and
+    english translation. (will work in any language).
     """
     # for finding something that has an exact match of name (just one string):
     name_match = EQUAL(FIELD("Name"), to_airtable_value(search_term))
@@ -25,8 +26,11 @@ def search_result_broad(search_term: str, table: Table) -> list:
     # for finding derivative terms (one long string, will contain \n to indicate line breaks):
     deriv_match = FIND(to_airtable_value(search_term), FIELD("Derivative Terms"))
 
+    # for finding in the english translation
+    meaning_match = FIND(to_airtable_value(search_term), FIELD("English Translation"))
+
     # combining to make formula
-    formula = OR(name_match, translit_match, deriv_match)
+    formula = OR(name_match, translit_match, deriv_match, meaning_match)
 
     return table.all(formula=formula)  # returns a list of records, which are themselves dicts
 
