@@ -137,3 +137,6 @@ EMAIL_HOST_USER = 'lexsciasia@gmail.com'
 EMAIL_HOST_PASSWORD = None  # to get access to email, need to generate App Password and use the generated result here
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+import django_heroku
+django_heroku.settings(locals())

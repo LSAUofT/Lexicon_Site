@@ -1,2 +1,15 @@
-django==4.1.1
-pyairtable
+asgiref==3.6.0
+certifi==2022.12.7
+charset-normalizer==3.1.0
+dj-database-url==2.0.0
+Django==4.2
+django-heroku==0.3.1
+idna==3.4
+psycopg2==2.9.6
+pyairtable==1.4.0
+requests==2.29.0
+sqlparse==0.4.4
+typing_extensions==4.5.0
+tzdata==2023.3
+urllib3==1.26.15
+whitenoise==6.4.0
