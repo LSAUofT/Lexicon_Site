@@ -1,4 +1,5 @@
 import pprint
+import textwrap
 
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
@@ -11,9 +12,10 @@ import os
 # todo: based on tutorial, will have to create objects that
 #   represent each search result
 
-def search_result_broad(search_term: str, table: Table) -> str:
+def search_result_broad(search_term: str, table: Table) -> list:
     """
-    searches for a match in name, transliteration, and derivative terms. (will work in any language).
+    searches for a match in name, transliteration, derivative terms, and
+    english translation. (will work in any language).
     """
     # for finding something that has an exact match of name (just one string):
     name_match = EQUAL(FIELD("Name"), to_airtable_value(search_term))
@@ -24,10 +26,32 @@ def search_result_broad(search_term: str, table: Table) -> str:
     # for finding derivative terms (one long string, will contain \n to indicate line breaks):
     deriv_match = FIND(to_airtable_value(search_term), FIELD("Derivative Terms"))
 
+    # for finding in the english translation
+    meaning_match = FIND(to_airtable_value(search_term), FIELD("English Translation"))
+
     # combining to make formula
-    formula = OR(name_match, translit_match, deriv_match)
+    formula = OR(name_match, translit_match, deriv_match, meaning_match)
 
     return table.all(formula=formula)  # returns a list of records, which are themselves dicts
+
+
+def generate_result(unprocessed: list):
+    """
+    unprocessed is a list that matches the formatting of records fetched by the AirTable API.
+    """
+    done = []
+
+    for record in unprocessed:
+        new_entry = {'Name': record['fields']['Name'],
+                     'English Translation': record['fields']['English Translation'],
+                     'Historical Notes': textwrap.shorten(record['fields']['Historical Notes'],
+                                                          width=280,
+                                                          placeholder="...")
+                     }
+
+        done.append(new_entry)
+
+    return done
 
 
 def search(request):
@@ -38,9 +62,9 @@ def search(request):
 
             r = search_result_broad(form.cleaned_data['search_query'], target_table)
             pprint.pp(r)
+            r_nice = generate_result(r)
 
-            # have temporarily made this "Search-Results.html" (note the plural) to test result finding
-            return render(request, 'search/Search-Results.html', {'form': form, 'results': r})
+            return render(request, 'search/Search-Result.html', {'form': form, 'results': r_nice})
 
     else:
         form = SearchForm()
